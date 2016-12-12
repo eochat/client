@@ -5,7 +5,7 @@ use commands::list::{ListType};
 #[derive(Serialize, Deserialize, Debug)]
 pub enum Action {
   Command(CommandType),
-  Message(String)
+  Message(String),
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -14,5 +14,5 @@ pub enum CommandType {
   Join(String),
   Set(SetType, String),
   List(ListType),
-  Quit
+  Quit,
 }

@@ -5,10 +5,12 @@ extern crate serde_json;
 
 #[macro_use] extern crate serde_derive;
 
-mod parser;
-mod types;
 mod commands;
+mod parser;
+mod utils;
+mod types;
 
+use utils::parser_helper::{get_action};
 use types::{Action, CommandType};
 
 fn main() {
@@ -21,7 +23,7 @@ fn main() {
 
     let input = String::from(input.trim());
 
-    match parser::get_action(input) {
+    match get_action(input) {
       Ok(a) => match a {
         Action::Command(t) => execute_command(t),
         Action::Message(m) => send_message(m)
