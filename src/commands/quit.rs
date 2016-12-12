@@ -1,0 +1,1 @@
+pub const QUIT: &'static str = "/quit";
