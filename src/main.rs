@@ -38,5 +38,5 @@ fn execute_command(c: CommandType) {
 }
 
 fn send_message(msg: String) {
-  println!("I will send a message")
+  println!("I will send \"{}\" as a message", &msg)
 }

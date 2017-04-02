@@ -15,7 +15,7 @@ impl FromStr for ListType {
     match s {
       "channels" => Ok(ListType::Channels),
       "users" => Ok(ListType::Users),
-      _ => Err("First argument for /set can only be channels or users".into()),
+      _ => Err("First argument for /list can only be channels or users".into()),
     }
   }
 }
@@ -26,6 +26,6 @@ pub fn get_list_args(args: &Vec<String>) -> Result<CommandType, String> {
       Ok(a) => Ok(CommandType::List(a)),
       Err(e) => Err(e),
     },
-    _ => Err("Create command requires 2 arguments".into()),
+    _ => Err("Create command requires 1 argument".into()),
   }
 }
